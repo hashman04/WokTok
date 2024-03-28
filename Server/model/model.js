@@ -45,14 +45,6 @@ const userSchema = new mongoose.Schema({
       action: String,
     },
   ],
-  // Address field
-  address: {
-    street: String,
-    city: String,
-    state: String,
-    postalCode: String,
-    country: String,
-  },
   // Profile photo field
   profilePhoto: {
     type: String, // You can store the URL or file path of the profile photo
