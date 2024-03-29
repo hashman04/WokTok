@@ -1405,7 +1405,7 @@ body {
 .work-request--information .information-name,
 .work-request--information .information-email,
 .work-request--information .information-phone,
-.work-request--information .information-address {
+.work-request--information .information-password {
   position: relative;
   width: calc(45% - 5px);
   height: 50px;
@@ -1414,13 +1414,14 @@ body {
 }
 
 .work-request--information .information-phone,
-.work-request--information .information-address {
+.work-request--information .information-password {
   margin-top: 20px;
 }
 
 .work-request--information input[type="text"],
 .work-request--information input[type="email"],
-.work-request--information input[type="tel"] {
+.work-request--information input[type="tel"],
+.work-request--information input[type="password"] {
   width: 100%;
   padding: 0 0 5px 0;
   background-color: transparent;
@@ -1430,7 +1431,8 @@ body {
 }
 .work-request--information input[type="text"]:focus,
 .work-request--information input[type="email"]:focus,
-.work-request--information input[type="tel"]:focus {
+.work-request--information input[type="tel"]:focus,
+.work-request--information input[type="password"]:focus {
   outline: none;
   background-color: #0c0c0c;
 }
