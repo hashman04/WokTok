@@ -697,23 +697,34 @@ body {
   padding: 0;
   list-style: none;
 }
+.intro--options div {
+  display: flex;
+}
+
 .intro--options > a {
+  flex-direction: column;
   max-width: 250px;
   text-decoration: none;
   color: #282828;
   -webkit-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
+
 .intro--options > a:hover {
   color: #fff;
 }
 .intro--options h3 {
   font-size: 16px;
   text-transform: uppercase;
+  margin:2px;
 }
 .intro--options p {
-  margin-bottom: 0;
+  flex-direction: column;
 }
+.intro--options > a:hover img {
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .intro--banner {
     height: 380px;
@@ -1662,6 +1673,15 @@ label{
 	margin: 20px;
 }
 
+.store-label{
+	color: #0f33ff;
+	font-size: 1em;
+  text-align: center;
+	justify-content: center;
+	display: flex;
+	margin: 40px;
+}
+
 input{
 	width: 60%;
 	height: 20px;
@@ -1676,7 +1696,7 @@ input{
   color: black;
 }
 .login{
-	height: 500px;
+	height: 480px;
 	background: #eee;
 	border-radius: 60% / 10%;
 	transform: translateY(-180px);
