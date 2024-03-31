@@ -1333,7 +1333,7 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 30px 0;
+  margin: 0 0;
 }
 .work-request--options .options-a {
   display: -webkit-box;
@@ -1363,8 +1363,8 @@ body {
   display: block;
   width: 200px;
   margin-bottom: 30px;
-  line-height: 50px;
-  font-size: 16px;
+  line-height: 20px;
+  font-size: 10px;
   font-weight: 700;
   text-align: center;
   border: 2px solid #fff;
@@ -1373,14 +1373,6 @@ body {
     border-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
-.work-request--options label svg {
-  position: relative;
-  left: -5px;
-  width: 0;
-  fill: #fff;
-  -webkit-transition: width 0.2s ease-in-out;
-  transition: width 0.2s ease-in-out;
-}
 .work-request--options input[type="checkbox"] {
   display: none;
 }
@@ -1388,9 +1380,7 @@ body {
   background-color: #0f33ff;
   border-color: #0f33ff;
 }
-.work-request--options input[type="checkbox"]:checked + label svg {
-  width: 15px;
-}
+
 .work-request--information {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1637,4 +1627,175 @@ body {
 .outer-nav li.is-vis:nth-child(5) {
   -webkit-transition-delay: 0.16s;
   transition-delay: 0.16s;
+}
+
+.main{
+	width: 350px;
+	height: 550px;
+	background: rgb(0, 47, 255);
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #ffffff;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+  color: black;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #000000;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+
+.sin button {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  position: relative;
+  padding: 5px 17px 5px 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+}
+.sin button .btn-background {
+  position: absolute;
+  top: 0;
+  left: 23px;
+  right: 0;
+  height: 100%;
+  background-color: #0f33ff;
+  z-index: -1;
+  -webkit-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
+}
+.sin button:hover .btn-background {
+  left: 0;
+}
+.sin button:focus {
+  outline: none;
+}
+.sin button svg {
+  position: relative;
+  left: 5px;
+  width: 15px;
+  fill: #fff;
+}
+.sin img {
+  position: absolute;
+  bottom: 21px;
+  right: -12px;
+}
+.loginput{
+	width: 60%;
+	height: 20px;
+	background: #000000;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+  color:#eee;
+}
+
+.log button {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  position: relative;
+  padding: 5px 17px 5px 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  color:#000;
+}
+.log button .btn-background {
+  position: absolute;
+  top: 0;
+  left: 23px;
+  right: 0;
+  height: 100%;
+  background-color: #0f33ff;
+  z-index: -1;
+  -webkit-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
+}
+.log button:hover .btn-background {
+  left: 0;
+}
+.log button:focus {
+  outline: none;
+}
+.log button svg {
+  position: relative;
+  left: 5px;
+  width: 15px;
+  fill: #000000;
+}
+.log img {
+  position: absolute;
+  bottom: 21px;
+  right: -12px;
 }
