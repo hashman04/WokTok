@@ -156,7 +156,6 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
   cursor: pointer;
 }
 button[disabled],
@@ -181,7 +180,6 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 input[type="search"] {
-  -webkit-appearance: textfield;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -1092,13 +1090,13 @@ body {
   background-repeat: no-repeat;
 }
 .about--options > a:nth-child(1) {
-  background-image: url("../img/about-winners.jpg");
+  background-image: url("../img/textchat.png");
 }
 .about--options > a:nth-child(2) {
-  background-image: url("../img/about-philosophy.jpg");
+  background-image: url("../img/videochat.png");
 }
 .about--options > a:nth-child(3) {
-  background-image: url("../img/about-history.jpg");
+  background-image: url("../img/collaboration.png");
 }
 .about--options > a:hover h3 {
   bottom: -50px;
