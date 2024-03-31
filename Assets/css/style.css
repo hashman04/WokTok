@@ -136,9 +136,9 @@ video{
     flex-basis: 15%;
     padding: 10px;
     border-radius: 5px;
-    height: 10px;
-    width: 5px;
-    box-shadow: 0 0 5px white;
+    height: 20px;
+    width: 20px;
+    box-shadow: 0 0 2px white;
     margin: 50px;
     margin-bottom: 100px;
     margin-left: -300px;
@@ -148,14 +148,14 @@ video{
     font-weight: bold;
     cursor: pointer;
     pointer-events: none;
-    background-color: #023268;
+    background-color: #0f33ff;
 }
 
 .type-message{
     flex-basis: 100%;
     padding: 0px;
     border-radius: 0px;
-    box-shadow: 0 0 10px rgb(3, 0, 156);
+    box-shadow: 0 0 2px #0f33ff;
     height: auto;
     width: 100%;
     margin-top: 5px;
@@ -173,14 +173,14 @@ video{
     flex-basis: 15%;
     padding: 10px;
     border-radius: 2px;
-    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 2px white;
     margin: 50px;
     margin-left: 100px;
     margin-right: 100px;
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
     justify-content: center;
-    background-color: #023268;
+    background-color: #0f33ff;
     align-items: center;
     font-weight: bold;
     cursor: pointer;
