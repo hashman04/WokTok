@@ -8,6 +8,12 @@ exports.homeRoutes = (req, res) => {
 exports.video_chat = (req, res) => {
   res.render("video_chat");
 };
+exports.chatroom = (req, res) => {
+  res.render("chatroom");
+};
+exports.collaborator = (req, res) => {
+  res.render("collaborator");
+};
 exports.text_chat = (req, res) => {
   res.render("text_chat");
 };

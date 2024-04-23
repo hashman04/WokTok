@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Woktok</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <link href="/css/collab.css" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-initials">CL</span>
+        <span class="logo-name">Codinglab</span>
+      </div>
+      <nav class="navigation">
+        <a href="#" class="nav-item active" id="dashboard"><i class="icon-dashboard"></i> Dashboard</a>
+        <a href="#" class="nav-item" id="addEvent"><i class="icon-content"></i> Add Event</a>
+        <a href="#" class="nav-item" id="removeEvent"><i class="icon-analytics"></i> Remove Event</a>
+        <a href="#" class="nav-item" id="updateEvent"><i class="icon-likes"></i> Update Event</a>
+        <a href="#" class="nav-item" id="settings"><i class="icon-comments"></i> Settings</a>
+        <hr />
+        <a href="#" class="nav-item" id="logout"><i class="icon-logout"></i> Logout</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <div id="dashboardContent" class="content active">
+        <!-- Dashboard content goes here -->
+        <h2>Dashboard Content</h2>
+        <ul id="eventList">
+          <!-- Existing events will be displayed here -->
+        </ul>
+      </div>
+      <div id="addEventContent" class="content">
+        <h2>Add Event</h2>
+        <form class="event-form" id="addEventForm">
+          <input type="text" id="eventName" placeholder="Event Name" required>
+          <input type="text" id="eventDate" placeholder="Event Date" required>
+          <input type="text" id="eventLocation" placeholder="Event Location" required>
+          <input type="file" id="eventBanner" accept="image/*" required>
+          <button type="submit">Add Event</button>
+        </form>
+      </div>
+      <div id="removeEventContent" class="content">
+        <!-- Remove Event form goes here -->
+        <h2>Remove Event</h2>
+        <form class="event-form" id="removeEventForm">
+          <input type="text" id="removeEventName" placeholder="Event Name to Remove" required>
+          <button type="submit">Remove Event</button>
+        </form>
+      </div>
+      <div id="updateEventContent" class="content">
+        <!-- Update Event form goes here -->
+        <h2>Update Event</h2>
+        <form class="event-form" id="updateEventForm">
+          <input type="text" id="updateEventName" placeholder="Event Name to Update" required>
+          <input type="text" id="newEventDate" placeholder="New Event Date" required>
+          <input type="text" id="neweventLocation" placeholder="New Event Location" required>
+          <input type="file" id="neweventBanner" accept="image/*" required>
+          <button type="submit">Update Event</button>
+        </form>
+      </div>
+      <div id="settingsContent" class="content">
+        <!-- Settings content goes here -->
+        <h2>Settings Content</h2>
+        <p>Adjust settings here.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/collab.js"></script>
+</body>
+</html>

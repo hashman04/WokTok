@@ -9,9 +9,13 @@ let sendChannel;
 let receiveChannel;
 var msgInput = document.querySelector("#msg-input");
 var msgSendBtn = document.querySelector(".msg-send-button");
-var chatTextArea = document.querySelector(".chat-text-area");
+var chatTextArea = document.querySelector(".messages");
+var cameraOn = true;
+var microphoneOn = true;
 var omeID = localStorage.getItem("omeID");
 let socket = io.connect();
+var cameraBtn = document.getElementById("cameraBtn");
+var microphoneBtn = document.getElementById("micBtn");
 socket.on("connect", () => {
   console.log("The Socket is connected");
 });
@@ -39,7 +43,45 @@ socket.on("mySocketId", (socketId) => {
 //     })
 //     .catch((error) => console.error("Error deleting records:", error));
 // });
+function toggleCamera() {
+  const videoTracks = localStream.getVideoTracks();
+  if (videoTracks.length === 0) {
+      console.log('No video tracks found');
+      return;
+  }
+  
+  cameraOn = !cameraOn;
 
+  videoTracks[0].enabled = cameraOn;
+
+  if (cameraOn) {
+      cameraBtn.src = "/img/cam-on.png";
+      cameraBtn.alt = "Camera On";
+  } else {
+      cameraBtn.src = "/img/cam-off.png";
+      cameraBtn.alt = "Camera Off";
+  }
+}
+
+function toggleMicrophone() {
+  const audioTracks = localStream.getAudioTracks();
+  if (audioTracks.length === -1) {
+      console.log('No audio tracks found');
+      return;
+  }
+  
+  microphoneOn = !microphoneOn;
+
+  audioTracks[0].enabled = microphoneOn;
+
+  if (microphoneOn) {
+      microphoneBtn.src = "/img/mic-on.png";
+      microphoneBtn.alt = "Microphone On";
+  } else {
+      microphoneBtn.src = "/img/mic-off.png";
+      microphoneBtn.alt = "Microphone Off";
+  }
+}
 function runUser() {
   let init = async () => {
     localStream = await navigator.mediaDevices.getUserMedia({
@@ -105,22 +147,20 @@ function runUser() {
 
     peerConnection.ondatachannel = receiveChannelCallback;
   };
-  function sendData() {
+function sendData() {
     const msgData = msgInput.value;
-    chatTextArea.innerHTML +=
-      "<div style='margin-top:2px; margin-bottom:2px;'><b>Me: </b>" +
-      msgData +
-      "</div>";
+    chatTextArea.innerHTML += "<div class='message'><strong>You</strong><p>" + msgData + "</p></div>";
+    
     if (sendChannel) {
-      onSendChannelStateChange();
-      sendChannel.send(msgData);
-      msgInput.value = "";
+        onSendChannelStateChange();
+        sendChannel.send(msgData);
+        msgInput.value = "";
     } else {
-      receiveChannel.send(msgData);
-      msgInput.value = "";
+        receiveChannel.send(msgData);
+        msgInput.value = "";
     }
-  }
-  function receiveChannelCallback(event) {
+}
+  function receiveChannelCallback(event) { 
     console.log("Receive Channel Callback");
     receiveChannel = event.channel;
     receiveChannel.onmessage = onReceiveChannelMessageCallback;
@@ -129,10 +169,7 @@ function runUser() {
   }
   function onReceiveChannelMessageCallback(event) {
     console.log("Received Message");
-    chatTextArea.innerHTML +=
-      "<div style='margin-top:2px; margin-bottom:2px;'><b>Stranger: </b>" +
-      event.data +
-      "</div>";
+    chatTextArea.innerHTML += "<div class='stranger-message'><strong>You</strong><p>" + event.data + "</p></div>";
   }
   function onReceiveChannelStateChange() {
     const readystate = receiveChannel.readystate;
@@ -191,7 +228,7 @@ function runUser() {
     await peerConnection.setLocalDescription(answer);
     socket.emit("answerSentToUser1", {
       answer: answer,
-      sender: data.remoteUser,
+      sender: data.remoteUser,  
       receiver: data.username,
     });
     document.querySelector(".next-chat").style.pointerEvents = "auto";
@@ -212,7 +249,7 @@ function runUser() {
     const remotStream = peerConnection.getRemoteStreams()[0];
     remotStream.getTracks().forEach((track) => track.stop());
     peerConnection.close();
-    document.querySelector(".chat-text-area").innerHTML = "";
+    document.querySelector(".messages").innerHTML = "";
     const remoteVid = document.getElementById("user-2");
     if (remoteVid.srcObject) {
       remoteVid.srcObject.getTracks().forEach((track) => track.stop());
@@ -237,7 +274,7 @@ function runUser() {
     });
   });
   async function closeConnection() {
-    document.querySelector(".chat-text-area").innerHTML = "";
+    document.querySelector(".messages").innerHTML = "";
     const remotStream = peerConnection.getRemoteStreams()[0];
     remotStream.getTracks().forEach((track) => track.stop());
 
@@ -256,7 +293,7 @@ function runUser() {
   }
 
   $(document).on("click", ".next-chat", function () {
-    document.querySelector(".chat-text-area").innerHTML = "";
+    document.querySelector(".messages").innerHTML = "";
     console.log("From Next Chat button");
     closeConnection();
   });

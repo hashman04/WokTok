@@ -1,0 +1,204 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+.video-conference-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  max-width: 100%;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+.video-section {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  backdrop-filter: blur(10px);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(140, 135, 135, 0.141);
+  border-radius: 10px;
+  padding: 0px;
+  backdrop-filter: blur(10px);
+}
+.header h1 {
+  margin-left: 4.5%;
+  font-size: 24px;
+  color: #333;
+}
+.header h1 span {
+  color: #0f33ff;
+}
+.header h2 {
+  font-size: 18px;
+  color: #666;
+}
+.main-video{
+    position: relative;
+}
+.main-video video {
+  background-color: #000000;
+  margin-top: 10px;
+  width: 1050px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.club-banner{
+  position: relative;
+}
+.club-banner img{
+   border-radius: 10px;
+  margin-top: 10px;
+  width: 1050px;
+  height: 120px;
+  object-fit: cover;
+}
+.participants {
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+.participants video {
+  margin-bottom: 100%;
+  margin-left: 10px;
+  background-color: #e0e0e0;
+  width: 250px;
+  height: 150px;
+  padding: 8%;
+  border-radius: 10px;
+}
+.video-controls {
+  bottom: 23%;
+  left: 39%;
+  position: absolute;
+  border-radius: 80%;
+  padding: 15px;
+  margin-top: 5px;
+  display: flex;
+}
+.video-controls img {
+  margin-right: 7px;
+}
+.messages-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.messages-header {
+    background-color: rgba(140, 135, 135, 0.141);
+    padding: 3px;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+.messages-header h3 {
+  margin-left: 5%;
+  font-size: 18px;
+  color: #000000;
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(140, 135, 135, 0.141);
+    padding: 10px;
+    margin-right: 20px;
+    height: 540px;
+    max-height: 540px;
+    max-width: 393px;
+    overflow-y: auto;
+}
+
+
+.message {
+  background-color: rgb(220,248,198);
+  padding: 8px;
+  margin-right: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+  max-width: 50%;
+}
+
+.stranger-message {
+  background-color: rgb(236,229,221);
+  padding: 8px;
+  margin-left: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+  max-width: 50%;
+}
+.message strong {
+  justify-content: flex-start;
+  color: #0f33ff;
+}
+
+.message p {
+  justify-content: flex-start;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: #666;
+}
+.stranger-message strong {
+  justify-content: flex-start;
+  color: #0f33ff;
+}
+
+.stranger-message p {
+  justify-content: flex-start;
+  margin-top: 3%;
+  color: #666;
+}
+.message-input {
+    background-color: rgba(140, 135, 135, 0.141);
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.message-input input {
+  width: 70%;
+  flex: 1;
+  padding: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.msg-send-button {
+  background: #007bff;
+  color: white;
+  font-size: 27.5px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  left: -20px;
+  top: 55%;
+  transform: translateY(-50%);
+}

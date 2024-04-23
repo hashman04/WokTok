@@ -1,0 +1,230 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Black.eot");
+  src: local("☺"), url("fonts/Montserrat-Black.woff") format("woff"),
+    url("fonts/Montserrat-Black.ttf") format("truetype"),
+    url("fonts/Montserrat-Black.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Bold.eot");
+  src: local("☺"), url("fonts/Montserrat-Bold.woff") format("woff"),
+    url("fonts/Montserrat-Bold.ttf") format("truetype"),
+    url("fonts/Montserrat-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("fonts/Montserrat-Regular.woff") format("woff"),
+    url("fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Light.eot");
+  src: local("☺"), url("fonts/Montserrat-Light.woff") format("woff"),
+    url("fonts/Montserrat-Light.ttf") format("truetype"),
+    url("fonts/Montserrat-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+} /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+.video-conference-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  max-width: 100%;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+.video-section {
+  padding: 16px;
+  display: flex;
+  background-color: var(--glass-bg);
+  flex-direction: column;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(140, 135, 135, 0.141);
+  border-radius: 10px;
+  padding: 0px;
+  backdrop-filter: blur(10px);
+}
+.header h1 {
+  margin-left: 4.5%;
+  font-size: 24px;
+  color: #333;
+}
+.header h1 span {
+  color: #0f33ff;
+}
+.header h2 {
+  font-size: 18px;
+  color: #666;
+}
+.main-video{
+    position: relative;
+}
+.main-video video {
+  background-color: #000000;
+  margin-top: 10px;
+  width: 1050px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.club-banner{
+  position: relative;
+}
+.club-banner img{
+   border-radius: 10px;
+  margin-top: 10px;
+  width: 1050px;
+  height: 120px;
+  object-fit: cover;
+}
+.participants {
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+.participants video {
+  background-color: #e0e0e0;
+  width: 90px;
+  height: 90px;
+  padding: 8%;
+  border-radius: 8%;
+}
+.video-controls {
+    bottom: 23%;
+    left: 37%;
+    position: absolute;
+    border-radius: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    display: flex;
+}
+.normal {
+  background: #ffffff;
+  border:none;
+  font-size: 27.5px;
+  padding: 8px 16px;
+  border-radius: 130px;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.hang {
+  background: #ff0000;
+  border:none;
+  font-size: 27.5px;
+  padding: 8px 16px;
+  border-radius: 130px;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.messages-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.messages-header {
+    background-color: rgba(140, 135, 135, 0.141);
+    padding: 3px;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+.messages-header h3 {
+  margin-left: 5%;
+  font-size: 18px;
+  color: #000000;
+}
+.messages {
+    background-color: rgba(140, 135, 135, 0.141);
+    padding: 10px;
+    margin-right: 20px;
+}
+.message {
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  margin-right: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message strong {
+  justify-content: flex-start;
+  color: #0f33ff;
+}
+
+.message p {
+  justify-content: flex-start;
+  margin-top: 3%;
+  color: #666;
+}
+.message-input {
+    background-color: rgba(140, 135, 135, 0.141);
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.messages {
+    overflow-y: auto;
+  }
+  .message {
+    margin-top: 53px;
+    margin-bottom: 10px;
+  }
+
+.message-input input {
+  width: 70%;
+  flex: 1;
+  padding: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.msg-send-button {
+  background: #007bff;
+  color: white;
+  font-size: 27.5px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  left: -20px;
+  top: 55%;
+  transform: translateY(-50%);
+}

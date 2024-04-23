@@ -6,6 +6,8 @@ const controller = require("../controller/controller");
 route.get("/", services.homeRoutes);
 
 route.get("/video_chat", services.video_chat);
+route.get("/collaborator", services.chatroom);
+route.get("/chatroom", services.collaborator);
 route.get("/admin", services.admin);
 route.get("/text_chat", services.text_chat);
 route.get("/profile", services.profile);

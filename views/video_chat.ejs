@@ -5,66 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=devZice-width, initial-scale=1.0" />
     <title>WokTok</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/hello.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <style>
-        .videos-container {
-            display: flex;
-            justify-content: space-between;
-            width: calc(100% + 1000px); /* Added 100px to the width */
-            margin-left: 0px; /* Adjusting for the additional width */
-        }
-        .video-player {
-            width: 98%;
-            max-width: 88%;
-        }
-        html, body {
-            height: 100%; /* Ensures the body takes up the full height of the viewport */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            background-color: rgba(0, 0, 0); /* Set background color to black */
-        }
-        main {
-            min-height: 100%; /* Fills at least the entire viewport height */
-            display: flex; /* Ensure main container stretches vertically */
-            flex-direction: column; /* Arrange children in a column */
-        }
-        .chat-text-container {
-            margin-top: 350px; /* Adjust as needed to increase vertical distance */
-        }
-    </style>
 </head>
 <body>
-    <main class="video_chat_main_container">
-        <div class="video_chat_container">
-            <div class="video-tag-container">
-                <div class="videos-container">
-                    <video class="video-player" id="user-1" autoplay="autoplay" playsinnline="playsinnline"></video>
-                    <video class="video-player" id="user-2" style="border-left: 10px solid #000000;" autoplay="autoplay" playsinnline="playsinnline"></video>
-                </div>
-            </div>
-            <div class="chat-container">
-                <div class="chat-text-container">
-                    <p>You are now chatting with a random SRM Student</p>
-                    <p>You both speak the same language - Hindi and English</p>
-                    <p class="chat-text-area"></p>
-                </div>
-                <div class="next-chat-container">
-                    <div class="next-chat">
-                        <div>Next</div>
-                    </div>
-                    <div class="type-message">
-                        <textarea name="" id="msg-input" cols="30" rows="5"></textarea>
-                    </div>
-                    <div class="msg-send-button">
-                        <i class="material-icons" style="font-size: 36px;">send</i>
-                    </div>
-                </div>
-            </div>
+    <div class="video-conference-container">
+      <div class="video-section">
+        <div class="header">
+          <h1>Wok<span>Tok</span></h1>
+          <h2>Personal Chatroom</h2>
+          <div></div>
         </div>
-    </main>
-</body>
+        <div class="main-video">
+          <video id="user-1" autoplay="autoplay" playsinnline="playsinnline"></video>
+        <div class="participants">
+          <video id="user-2" autoplay="autoplay" playsinnline="playsinnline"></video>
+        </div>
+    </div>
+        <div class="video-controls">
+          <img id="cameraBtn" src="/img/cam-on.png" alt="Camera On" onclick="toggleCamera()" style="height: 60px; width: 60px;">
+          <img id="micBtn" src="/img/mic-on.png" alt="Microphone" onclick="toggleMicrophone()" style="height: 60px; width: 60px;">
+          <img src="/img/end-call.png" alt="Next" style="height: 60px; width: 60px;">
+          <img id="next-chat" src="/img/next-chat.png" alt="Next Chat" onclick="runUser()" style="height: 60px; width: 60px;">
+        </div>
+        <div class="club-banner">
+          <img src="https://placehold.co/600x340" alt="clubs"/>
+        </div>
+      </div>
+      <div class="messages-section">
+        <div class="messages-header">
+          <h3>View Messages</h3>
+        </div>
+        <div class="messages">
+        </div>
+        <div class="message-input">
+          <input id="msg-input" type="text" placeholder="Write your message" />
+          <button class="msg-send-button">➤</button>
+        </div>
+      </div>
+    </div>
+  </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
 </html>
