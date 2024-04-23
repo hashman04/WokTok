@@ -169,7 +169,7 @@ function sendData() {
   }
   function onReceiveChannelMessageCallback(event) {
     console.log("Received Message");
-    chatTextArea.innerHTML += "<div class='stranger-message'><strong>You</strong><p>" + event.data + "</p></div>";
+    chatTextArea.innerHTML += "<div class='stranger-message'><strong>Stranger</strong><p>" + event.data + "</p></div>";
   }
   function onReceiveChannelStateChange() {
     const readystate = receiveChannel.readystate;
