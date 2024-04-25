@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
   },
   userType: {
     type: String,
-    enum: ["admin", "regular"],
+    enum: ["collaborator"],
     default: "regular",
   },
   registrationDate: {
@@ -45,11 +45,9 @@ const userSchema = new mongoose.Schema({
       action: String,
     },
   ],
-  // Profile photo field
   profilePhoto: {
-    type: String, // You can store the URL or file path of the profile photo
+    type: String,
   },
-  // Other user-specific fields as needed
 });
 
 const videoSessionSchema = new mongoose.Schema({
@@ -62,7 +60,7 @@ const videoSessionSchema = new mongoose.Schema({
     {
       userID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User", // Reference to the User collection
+        ref: "User",
         required: true,
       },
       username: String,
@@ -70,14 +68,13 @@ const videoSessionSchema = new mongoose.Schema({
   ],
 
   startTime: {
-    type: Date, // Store the start time of the video session
+    type: Date,
   },
   endTime: {
-    type: Date, // Store the end time of the video session
+    type: Date,
   },
-  // Other session-specific fields, such as video call configuration
   duration: {
-    type: Number, // Duration in milliseconds
+    type: Number,
   },
   timestamp: {
     type: Date,

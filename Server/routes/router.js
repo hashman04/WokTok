@@ -6,12 +6,11 @@ const controller = require("../controller/controller");
 route.get("/", services.homeRoutes);
 
 route.get("/video_chat", services.video_chat);
-route.get("/collaborator", services.chatroom);
-route.get("/chatroom", services.collaborator);
+route.get("/collaborator", services.collaborator);
+route.get("/chatroom", services.chatroom);
 route.get("/admin", services.admin);
 route.get("/text_chat", services.text_chat);
 route.get("/profile", services.profile);
-// route.get("/login", services.login);
 route.post("/api/users", controller.create);
 route.put("/leaving-user-update/:id", controller.leavingUserUpdate);
 route.put(

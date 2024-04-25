@@ -24,7 +24,6 @@ exports.login = (req, res) => {
   res.render("login");
 };
 
-// Define the profile route with the middleware
 exports.profile = [
   requireAuth,
   (req, res) => {

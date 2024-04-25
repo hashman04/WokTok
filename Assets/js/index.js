@@ -32,8 +32,8 @@ socket.on("mySocketId", (socketId) => {
 
   console.log("My Socket ID:", socketId);
 });
-
-// document.getElementById("deleteButton").addEventListener("click", () => {
+ 
+// document.getElementById("deleteButton").addEventListener("click", () => {      
 //   fetch("/deleteAllRecords", {
 //     method: "DELETE",
 //   })

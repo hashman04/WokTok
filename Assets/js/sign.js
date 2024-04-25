@@ -1,17 +1,16 @@
 // JavaScript to open and close the modal
 
 // Get the Sign Up modal and buttons
-const modal = document.getElementById("signupModal");
-const inmodal = document.getElementById("signinModal");
+const signupmodal = document.getElementById("index");
+const loginmodal = document.getElementById("index");
 const openModalBtn = document.getElementById("openModalBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
 
-// Open the modal
-openModalBtn.addEventListener("click", () => {
-  modal.style.display = "block";
+//openModalBtn.addEventListener("click", () => {
+  //modal.style.display = "block";
 
-  modal.classList.add("fade-in");
-});
+  //modal.classList.add("fade-in");
+//});
 
 // Close the modal when the close button or outside the modal is clicked
 closeModalBtn.addEventListener("click", () => {
@@ -20,16 +19,6 @@ closeModalBtn.addEventListener("click", () => {
     modal.style.display = "none";
     modal.classList.remove("fade-out"); // Remove fade-out class
   }, 300); // Set the timeout to match the animation duration (0.5s)
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target == modal) {
-    modal.classList.add("fade-out"); // Add fade-out class
-    setTimeout(() => {
-      modal.style.display = "none";
-      modal.classList.remove("fade-out"); // Remove fade-out class
-    }, 300); // Set the timeout to match the animation duration (0.5s)
-  }
 });
 
 // Prevent the form from submitting (this is just a basic example)
@@ -200,14 +189,13 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
 });
 // ...........Processing SignIn data............
 
-const signInForm = document.getElementById("signInForm");
+const loginForm = document.getElementById("loginForm");
 const inemailInput = document.getElementById("inEmail");
 const inpasswordInput = document.getElementById("inPassword");
-
 const inemailError = document.getElementById("inemailError");
 const inpasswordError = document.getElementById("inpasswordError");
 
-document.getElementById("signInForm").addEventListener("submit", async (e) => {
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
   let inisValid = true;
 
   // Reset error messages
@@ -226,12 +214,6 @@ document.getElementById("signInForm").addEventListener("submit", async (e) => {
     inisValid = false;
     inpasswordError.textContent = "Password must be at least 8 characters long";
   }
-
-  // Validate confirmPassword (must match password)
-  // if (passwordInput.value !== confirmPasswordInput.value) {
-  //   isValid = false;
-  //   confirmPasswordError.textContent = "Passwords do not match";
-  // }
 
   if (!inisValid) {
     e.preventDefault(); // Prevent form submission if there are errors

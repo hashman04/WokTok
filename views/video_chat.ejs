@@ -14,13 +14,13 @@
       <div class="video-section">
         <div class="header">
           <h1>Wok<span>Tok</span></h1>
-          <h2>Personal Chatroom</h2>
+          <h2>Random Video Chat</h2>
           <div></div>
         </div>
-        <div class="main-video">
-          <video id="user-1" autoplay="autoplay" playsinnline="playsinnline"></video>
+        <div class="main-user">
+          <video id="user-1" autoplay="autoplay" playsinline></video>
         <div class="participants">
-          <video id="user-2" autoplay="autoplay" playsinnline="playsinnline"></video>
+          <video id="user-2" autoplay="autoplay" playsinline></video>
         </div>
     </div>
         <div class="video-controls">
@@ -41,11 +41,23 @@
         </div>
         <div class="message-input">
           <input id="msg-input" type="text" placeholder="Write your message" />
-          <button class="msg-send-button">➤</button>
+          <button type="submit" class="msg-send-button">➤</button>
         </div>
       </div>
     </div>
   </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
+<script>
+
+  const user1Video = document.getElementById('user-1');
+  const user2Video = document.getElementById('user-2');
+
+  user2Video.addEventListener('click', () => {
+      user1Video.style.width = `${user2Video.offsetWidth}px`;
+      user1Video.style.height = `${user2Video.offsetHeight}px`;
+      user2Video.style.width = `${user1Video.offsetWidth}px`;
+      user2Video.style.height = `${user1Video.offsetHeight}px`;
+  });
+</script>
 </html>
