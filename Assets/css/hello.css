@@ -128,7 +128,6 @@ body {
     overflow-y: auto;
 }
 
-
 .message {
   background-color: rgb(220,248,198);
   padding: 8px;
@@ -140,7 +139,8 @@ body {
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 14px;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;  
   max-width: 50%;
 }
 
@@ -155,6 +155,7 @@ body {
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 14px;
+  overflow-wrap: break-word;
   word-wrap: break-word;
   max-width: 50%;
 }

@@ -298,3 +298,65 @@ function sendData() {
     closeConnection();
   });
 }
+const user1Video = document.getElementById('user-1');
+  const user2Video = document.getElementById('user-2');
+
+  user2Video.addEventListener('click', () => {
+      user1Video.style.width = `${user2Video.offsetWidth}px`;
+      user1Video.style.height = `${user2Video.offsetHeight}px`;
+      user2Video.style.width = `${user1Video.offsetWidth}px`;
+      user2Video.style.height = `${user1Video.offsetHeight}px`;
+  });
+
+  $(document).ready(function() {
+  // Function to send message
+  function sendMessage() {
+    var messageInput = $('#msg-input').val().trim(); // Remove leading and trailing whitespace
+    if (messageInput.length === 0) {
+      alert("Empty messages cannot be sent.");
+      return; // Exit function if message is empty
+    }
+
+    // Clear the message input after sending a message
+    $('#msg-input').val('');
+
+    // Check if the message is longer than 30 characters
+    var wrappedMessage = wrapMessage(messageInput);
+    
+    // Create a green box enclosing the new message
+    var newMessage = '<div class="message"><strong>You:</strong><br><div class="message-content">' + wrappedMessage + '</div></div>';
+
+    // Append the new message to the messages container
+    $('.messages').append(newMessage);
+  }
+
+  // Function to wrap long messages
+  function wrapMessage(message) {
+    // Wrap long messages within the "You" message
+    var wrappedMessage = '';
+    var words = message.split(' ');
+    var line = '';
+    for (var i = 0; i < words.length; i++) {
+      if ((line + words[i]).length > 30) {
+        // Start a new line if adding the next word exceeds the character limit
+        wrappedMessage += line + '<br>';
+        line = '';
+      }
+      line += words[i] + ' ';
+    }
+    wrappedMessage += line; // Add the last line
+    return wrappedMessage;
+  }
+
+  // Click event handler for send button
+  $('.msg-send-button').click(function() {
+    sendMessage();
+  });
+
+  // Keypress event handler for "Enter" key
+  $('#msg-input').keypress(function(event) {
+    if (event.which === 13) {
+      sendMessage();
+    }
+  });
+});

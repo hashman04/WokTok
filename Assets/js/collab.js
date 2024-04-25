@@ -121,3 +121,20 @@ displayEvents();
         content.classList.add('active');
       });
     });
+    document.getElementById("logout").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("logoutModal").style.display = "block";
+    });
+    
+    document.getElementById("logoutNo").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("logoutModal").style.display = "none";
+    });
+    
+    document.getElementById("logoutYes").addEventListener("click", function(event) {
+      event.preventDefault();
+      alert("You have logged out");
+      window.location.href = "http://localhost:3000/"; // Replace "/logout" with the URL you want to redirect to after logout
+    });
+    
+  

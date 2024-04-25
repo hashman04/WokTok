@@ -89,7 +89,7 @@
   }
   .main-content {
     flex-grow: 1;
-    background-color: #fff;
+    background-color: #000000;
     padding: 1rem;
   }
   .header {
@@ -175,5 +175,38 @@
       padding: 0.5rem;
     }
   }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px; /* Add rounded corners to all edges */
+  }
+  
+  
+  .modal-buttons {
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px; /* Increase the padding of the buttons */
+    background-color: blue; /* Change the background color of the buttons to blue */
+    color: white; /* Change the font color of the buttons to white */
+  }
+  
   
   
