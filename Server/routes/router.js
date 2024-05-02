@@ -8,6 +8,7 @@ route.get("/", services.homeRoutes);
 route.get("/video_chat", services.video_chat);
 route.get("/collaborator", services.collaborator);
 route.get("/chatroom", services.chatroom);
+route.get("/select", services.select);
 route.get("/admin", services.admin);
 route.get("/text_chat", services.text_chat);
 route.get("/profile", services.profile);
@@ -24,7 +25,5 @@ route.put("/update-on-engagement/:id", controller.updateOnEngagement);
 route.put("/update-on-next/:id", controller.updateOnNext);
 route.post("/get-next-user", controller.getNextUser);
 route.delete("/deleteAllRecords", controller.deleteAllRecords);
-route.post("/register", controller.registerUser);
-route.post("/login", controller.login);
 
 module.exports = route;

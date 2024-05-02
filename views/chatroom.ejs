@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="HTML5 website template">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chatroom.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <link rel="icon" href="/img/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <div class="video-conference-container">
@@ -27,10 +29,12 @@
         </div>
     </div>
         <div class="video-controls">
-          <button class="normal">🎥</button>
-          <button class="normal">🎤</button>
-          <button class="hang">📞</button>
-          <button class="normal">🎤</button>
+          <img id="cameraBtn" src="/img/cam-on.png" alt="Camera On" onclick="toggleCamera()" style="height: 60px; width: 60px;">
+          <img id="micBtn" src="/img/mic-on.png" alt="Microphone" onclick="toggleMicrophone()" style="height: 60px; width: 60px;">
+          <img src="/img/end-call.png" alt="Next" style="height: 60px; width: 60px;">
+        </div>
+        <div class="logo">
+          <img src="/img/logo.png" alt="WokTok">
         </div>
         <div class="club-banner">
           <img src="https://placehold.co/600x340" alt="clubs" />
@@ -41,22 +45,6 @@
           <h3>View Messages</h3>
         </div>
         <div class="messages">
-          <div class="message">
-            <strong>Dhruv Papa</strong>
-            <p>Please send me project code</p>
-          </div>
-          <div class="message">
-            <strong>Aasmaan</strong>
-            <p>I have it on Google Drive</p>
-          </div>
-          <div class="message">
-            <strong>Guru paaji</strong>
-            <p>I want it too.</p>
-          </div>
-          <div class="message">
-            <strong>Guptiyaa</strong>
-            <p>Loda lelo mera</p>
-          </div>
         </div>
         <div class="message-input">
           <input type="text" placeholder="Write your message" />
@@ -65,7 +53,6 @@
       </div>
     </div>
   </body>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
 </html>
   

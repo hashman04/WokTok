@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Chat</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <style>
-        .video_chat_container {
-            background-color: black; /* Set background color to black */
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=devZice-width, initial-scale=1.0" />
+    <title>WokTok</title>
+    <link rel="stylesheet" href="/css/text.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <img class="logo" src="/img/Logo.png" alt="">
-                <h2>Talk to SRM Students</h2>
-                <div class="online-status">1000+ online now</div>
-            </div>
-        </nav>
-    </header>
-    <main class="video_chat_main_container">
-        <div class="video_chat_container" style="justify-content: center;align-items: center;">
-            <div class="video-tag-container" style="display: none;">
-                <div class="videos">
-                    <video class="video-player" id="user-1" autoplay="autoplay" playsinnline="playsinnline"></video>
-                    <video class="video-player" id="user-2" style="border-top: 2px solid white;" autoplay="autoplay" playsinnline="playsinnline"></video>
-                </div>
-            </div>
-            <div class="chat-container">
-                <div class="chat-text-container">
-                    <p>You are now chatting with a random SRM Student</p>
-                    <p>You both speak the same language - Hindi and English</p>
-                    <hr class="horizontal-divider">
-                    <p class="chat-text-area"></p>
-                </div>
-                <div class="next-chat-container">
-                    <div class="next-chat">
-                        <div>Next</div>
-                    </div>
-                    <div class="type-message">
-                        <textarea name="" id="msg-input" cols="25" rows="5"></textarea>
-                    </div>
-                    <div class="msg-send-button">Send</div>
-                </div>
-            </div>
+    <div class="text-container">
+      <div class="text-section">
+        <div class="text-top">
+          <h1>Wok<span>Tok</span></h1>
+          <h2>Random Text Chat</h2>
+          <div></div>
         </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="/js/index.js"></script>
-</body>
+        <div class="logo">
+            <img src="/img/logo.png" alt="WokTok">
+          </div>
+        <div class="messages-section">
+          <div class="messages-header">
+            <h3>View Messages</h3>
+          </div>
+          <div class="messages">
+          </div>
+          <div class="message-input">
+            <input type="text" placeholder="Write your message" />
+            <button class="msg-send-button">➤</button>
+          </div>
+        </div>
+        <div class="profile-section">
+          <img src="https://placehold.co/365x708" alt="clubs"/>
+        </div>
+        <div class="attach">
+          <img src="/img/attach.png" alt="Attach" style="height: 30px; width: 30px;">
+        </div>
+        <div class="next-chat">
+          <img src="/img/next-chat.png" alt="Next Chat" style="height: 110px; width: 150px;">
+        </div>
+      </div>
+      <div class="club-banner">
+        <img src="https://placehold.co/365x708" alt="clubs"/>
+      </div>
+    </div>
+  </body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
 </html>

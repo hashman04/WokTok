@@ -11,6 +11,9 @@ exports.video_chat = (req, res) => {
 exports.chatroom = (req, res) => {
   res.render("chatroom");
 };
+exports.select= (req, res) => {
+  res.render("select");
+};
 exports.collaborator = (req, res) => {
   res.render("collaborator");
 };

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 var { UserDB, User, VideoSession } = require("../model/model");
-const bcrypt = require("bcrypt");
 exports.create = (req, res) => {
   const user = new UserDB({
     active: "yes",
@@ -254,88 +253,4 @@ exports.deleteAllRecords = (req, res) => {
       });
     });
 };
-const checkEmailExists = async (email) => {
-  try {
-    const existingUser = await User.findOne({ email });
-    return !!existingUser; // Return true if the email exists, false otherwise
-  } catch (error) {
-    console.error("Error checking email:", error);
-    return false; // Return false in case of an error
-  }
-};
-exports.registerUser = async (req, res) => {
-  const bcrypt = require("bcrypt");
-
-  try {
-    // Extract data from the request body
-    const { email, password, confirmPassword } = req.body;
-    const emailExists = await checkEmailExists(email);
-
-    if (emailExists) {
-      return res
-        .status(400)
-        .json({ message: "Email already exists in the database." });
-
-      // Handle the case where the email already exists
-    } else {
-      // console.log("Email is :", confirmPassword);
-      // Check if passwords match
-      if (password !== confirmPassword) {
-        return res.status(400).json({ message: "Passwords do not match" });
-      }
-      const hashedPassword = await bcrypt.hash(password, 10);
-      // Create a new user document
-      const user = new User({
-        email: email,
-        password: hashedPassword,
-      });
-
-      // Save the user document to the database
-      await user.save();
-
-      const userId = user._id;
-
-      // Store the user's _id in the session
-      req.session.userId = userId;
-
-      console.log("User id Is: ", userId);
-
-      res.status(201).json({ message: "User registered successfully" });
-
-      console.log("Email is available for registration.");
-      // Proceed with user registration
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "An error occurred" });
-  }
-};
-exports.login = async (req, res) => {
-  try {
-    // Extract data from the request body
-    const { inemail, inpassword } = req.body;
-
-    // Fetch the user from the database by email
-    const user = await User.findOne({ email: inemail });
-
-    // Check if the user exists
-    if (!user) {
-      return res.status(401).json({ message: "User not found" });
-    }
-
-    // Compare the provided password with the hashed password in the database
-    const passwordMatch = await bcrypt.compare(inpassword, user.password);
-
-    if (!passwordMatch) {
-      return res.status(401).json({ message: "Incorrect password" });
-    }
-
-    // Set the user's _id in the session
-    req.session.userId = user._id;
-
-    res.status(200).json({ message: "Login successful" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "An error occurred" });
-  }
-};
+  

@@ -1,44 +1,3 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Black.eot");
-  src: local("☺"), url("fonts/Montserrat-Black.woff") format("woff"),
-    url("fonts/Montserrat-Black.ttf") format("truetype"),
-    url("fonts/Montserrat-Black.svg") format("svg");
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Bold.eot");
-  src: local("☺"), url("fonts/Montserrat-Bold.woff") format("woff"),
-    url("fonts/Montserrat-Bold.ttf") format("truetype"),
-    url("fonts/Montserrat-Bold.svg") format("svg");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Regular.eot");
-  src: local("☺"), url("fonts/Montserrat-Regular.woff") format("woff"),
-    url("fonts/Montserrat-Regular.ttf") format("truetype"),
-    url("fonts/Montserrat-Regular.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Light.eot");
-  src: local("☺"), url("fonts/Montserrat-Light.woff") format("woff"),
-    url("fonts/Montserrat-Light.ttf") format("truetype"),
-    url("fonts/Montserrat-Light.svg") format("svg");
-  font-weight: 300;
-  font-style: normal;
-} /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -76,7 +35,7 @@ body {
   backdrop-filter: blur(10px);
 }
 .header h1 {
-  margin-left: 4.5%;
+  margin-left: 5.5%;
   font-size: 24px;
   color: #333;
 }
@@ -91,6 +50,7 @@ body {
     position: relative;
 }
 .main-video video {
+  transform: scaleX(-1);
   background-color: #000000;
   margin-top: 10px;
   width: 1050px;
@@ -116,40 +76,33 @@ body {
     flex-direction: column;
   }
 .participants video {
+  transform: scaleX(-1);
   background-color: #e0e0e0;
-  width: 90px;
+  width: 150px;
   height: 90px;
-  padding: 8%;
+  padding: 6%;
   border-radius: 8%;
+}
+.logo {
+  top: 1.6%;
+  left: 1.5%;
+  position: absolute;
+  border-radius: 80%;
+  padding: 15px;
+  margin-top: 5px;
+  display: flex;
 }
 .video-controls {
     bottom: 23%;
-    left: 37%;
+    left: 43%;
     position: absolute;
     border-radius: 80%;
-    padding: 10px;
+    padding: 15px;
     margin-top: 5px;
     display: flex;
 }
-.normal {
-  background: #ffffff;
-  border:none;
-  font-size: 27.5px;
-  padding: 8px 16px;
-  border-radius: 130px;
-  font-size: 24px;
-  cursor: pointer;
-  margin: 0 5px;
-}
-.hang {
-  background: #ff0000;
-  border:none;
-  font-size: 27.5px;
-  padding: 8px 16px;
-  border-radius: 130px;
-  font-size: 24px;
-  cursor: pointer;
-  margin: 0 5px;
+.video-controls img {
+  margin-right: 7px;
 }
 
 .messages-section {
@@ -158,6 +111,8 @@ body {
   flex-direction: column;
 }
 .messages-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
     background-color: rgba(140, 135, 135, 0.141);
     padding: 3px;
     margin-top: 15px;
@@ -169,20 +124,47 @@ body {
   color: #000000;
 }
 .messages {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(140, 135, 135, 0.141);
     padding: 10px;
     margin-right: 20px;
+    height: 540px;
+    max-height: 540px;
+    max-width: 393px;
+    overflow-y: auto;
 }
+
+
 .message {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(220,248,198);
   padding: 8px;
-  margin-right: 20px;
+  margin-right: auto;
   border-radius: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+  max-width: 50%;
 }
 
+.stranger-message {
+  background-color: rgb(236,229,221);
+  padding: 8px;
+  margin-left: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+  max-width: 50%;
+}
 .message strong {
   justify-content: flex-start;
   color: #0f33ff;
@@ -190,22 +172,27 @@ body {
 
 .message p {
   justify-content: flex-start;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: #666;
+}
+.stranger-message strong {
+  justify-content: flex-start;
+  color: #0f33ff;
+}
+
+.stranger-message p {
+  justify-content: flex-start;
   margin-top: 3%;
   color: #666;
 }
 .message-input {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
     background-color: rgba(140, 135, 135, 0.141);
     padding: 10px;
     margin-right: 20px;
 }
-
-.messages {
-    overflow-y: auto;
-  }
-  .message {
-    margin-top: 53px;
-    margin-bottom: 10px;
-  }
 
 .message-input input {
   width: 70%;
