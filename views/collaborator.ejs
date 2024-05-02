@@ -8,12 +8,18 @@
   <meta name="description" content="HTML5 website template">
   <link href="/css/collab.css" rel="stylesheet">
 </head>
+<style>
+  #eventName,
+  #eventLocation {
+      width: 10%;
+  }
+</style>
 <body>
   <div class="dashboard">
     <aside class="sidebar">
       <div class="logo">
-        <span class="logo-initials">CL</span>
-        <span class="logo-name">Codinglab</span>
+        <span class="logo-initials">CD</span>
+        <span class="logo-name">Collab Dashboard</span>
       </div>
       <nav class="navigation">
         <a href="#" class="nav-item active" id="dashboard"><i class="icon-dashboard"></i> Dashboard</a>
@@ -33,35 +39,48 @@
           <!-- Existing events will be displayed here -->
         </ul>
       </div>
-      <div id="addEventContent" class="content">
-        <h2>Add Event</h2>
-        <form class="event-form" id="addEventForm">
-          <input type="text" id="eventName" placeholder="Event Name" required>
-          <input type="text" id="eventDate" placeholder="Event Date" required>
-          <input type="text" id="eventLocation" placeholder="Event Location" required>
-          <input type="file" id="eventBanner" accept="image/*" required>
-          <button type="submit">Add Event</button>
-        </form>
-      </div>
-      <div id="removeEventContent" class="content">
-        <!-- Remove Event form goes here -->
-        <h2>Remove Event</h2>
-        <form class="event-form" id="removeEventForm">
-          <input type="text" id="removeEventName" placeholder="Event Name to Remove" required>
-          <button type="submit">Remove Event</button>
-        </form>
-      </div>
-      <div id="updateEventContent" class="content">
-        <!-- Update Event form goes here -->
-        <h2>Update Event</h2>
-        <form class="event-form" id="updateEventForm">
-          <input type="text" id="updateEventName" placeholder="Event Name to Update" required>
-          <input type="text" id="newEventDate" placeholder="New Event Date" required>
-          <input type="text" id="neweventLocation" placeholder="New Event Location" required>
-          <input type="file" id="neweventBanner" accept="image/*" required>
-          <button type="submit">Update Event</button>
-        </form>
-      </div>
+     <div id="addEventContent" class="content">
+    <h2>Add Event</h2>
+    <form class="event-form" id="addEventForm">
+        <label for="">Event Name:</label>
+        <input type="text" id="eventName" placeholder="Event Name" required><br><br>
+
+        <label for="eventDate">Event Date:</label>
+        <input type="date" id="eventDate" placeholder="Event Date" required><br><br>
+
+        <label for="">Event Location:</label>
+        <input type="text" id="eventLocation" placeholder="Event Location" list="cityList" required><br><br>
+
+        <label for="eventBanner">Event Banner:</label>
+        <input type="file" id="eventBanner" accept="image/*" required><br><br>
+
+        <button type="submit">Add Event</button>
+    </form>
+</div>       
+<div id="removeEventContent" class="content">
+  <h2>Remove Event</h2>
+  <form class="event-form" id="removeEventForm">
+      <label for="eventNameToRemove">Event Name:</label>
+      <input type="text" id="eventNameToRemove" placeholder="Event Name" style="width: 10%;" required><br>
+
+      <button type="submit">Remove Event</button>
+  </form>
+</div>
+<div id="updateEventContent" class="content">
+  <h2>Update Event</h2>
+  <form class="event-form" id="updateEventForm">
+      <label for="eventNameToUpdate">Event Name:</label>
+      <input type="text" id="eventNameToUpdate" placeholder="Event Name" style="width: 10%;" required><br><br>
+
+      <label for="newEventDate">New Event Date:</label>
+      <input type="date" id="newEventDate" placeholder="New Event Date" style="width: 10%;" required><br><br>
+
+      <label for="newEventLocation">New Event Location:</label>
+      <input type="text" id="newEventLocation" placeholder="New Event Location" list="cityList" style="width: 10%;" required><br><br>
+
+      <button type="submit">Update Event</button>
+  </form>
+</div>
       <div id="settingsContent" class="content">
         <!-- Settings content goes here -->
         <h2>Settings Content</h2>
@@ -69,7 +88,15 @@
       </div>
     </main>
   </div>
-
+  <div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <h2>Do you want to logout?</h2>
+      <div class="modal-buttons">
+        <button id="logoutNo">No</button>
+        <button id="logoutYes">Yes</button>
+      </div>
+    </div>
+  </div>  
   <script src="/js/collab.js"></script>
 </body>
 </html>
